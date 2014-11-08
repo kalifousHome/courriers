@@ -1,9 +1,13 @@
 package letter;
 
+import java.util.Set;
+
 public class Inhabitant {
 	
 	protected String name;
 	protected City city;
+	protected Account account;
+	protected Set<Letter> received;
 
 	//ATTRIBUTS
 	
@@ -47,6 +51,15 @@ public class Inhabitant {
 	 */
 	public void sendLetter(Letter letter) {
 		this.city.sendLetter(letter);
+	}
+
+	/**
+	 * open the specified Letter and add it to this.received
+	 * @param received the letter received
+	 */
+	public void receiveLetter(Letter received) {
+		received.open();
+		this.received.add(received);
 	}
 
 

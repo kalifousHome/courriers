@@ -26,5 +26,10 @@ public abstract class Letter { //implements Content{
 		return content;
 		}
 	
+	/**
+	 * credite le compte pour une promissory, affiche le texte d'une simple etc...
+	 */
+	public abstract void open();
+	
 	}
 

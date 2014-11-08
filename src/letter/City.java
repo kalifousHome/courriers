@@ -49,5 +49,15 @@ public class City {
 	public void sendLetter(Letter letter){
 		this.postbox.add(letter);
 	}
+	
+	/**
+	 * Distribute the letters in the postbox of this City to the Inhabitants and empty the postbox
+	 */
+	public void distributeLetters(){
+		while(!this.postbox.isEmpty()){
+			Letter toDistribute = this.postbox.get(0);
+			toDistribute.getReceiver().receiveLetter(toDistribute);
+		}
+	}
 
 }

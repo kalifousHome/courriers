@@ -43,5 +43,6 @@ public class CityTest {
 		city.sendLetter(letter);
 		assertEquals(mypostbox,city.getPostbox());
 	}
-
+	
+	
 }
