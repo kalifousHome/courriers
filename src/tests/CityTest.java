@@ -41,12 +41,20 @@ public class CityTest {
 		ArrayList<Letter> mypostbox = new ArrayList<Letter>();
 		mypostbox.add(letter);
 		city.sendLetter(letter);
+		assertFalse(city.getPostbox().isEmpty());
 		assertEquals(mypostbox,city.getPostbox());
 	}
-	
+
 	@Test
-	public void distributeLetterTest(){
-		
+	public void distributeLetterTest() {
+		TestCity city = new TestCity("city");
+		Inhabitant inhabitant1 = new Inhabitant(city);
+		Inhabitant inhabitant2 = new Inhabitant(city);
+		Letter letter = new SimpleLetter(inhabitant1,inhabitant2,new Text("test"));
+		city.sendLetter(letter);
+		city.distributeLetters();
+		assertTrue(city.getPostbox().isEmpty());
 	}
+	
 	
 }
