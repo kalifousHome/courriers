@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import content.Text;
 
+
 public class CityTest {
 
 	private class TestCity extends City{

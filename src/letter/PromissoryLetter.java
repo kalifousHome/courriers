@@ -24,6 +24,7 @@ public class PromissoryLetter extends Letter{
 		
 		super(sender, receiver,money);
 		amount = ((Money)content).getAmount();
+		sender.debit(amount);
 		
 		// Initializing the thank letter with a thank text		
 		Thanks thanksText = new Thanks(receiver , sender); 
@@ -41,7 +42,9 @@ public class PromissoryLetter extends Letter{
 	 **/
 	@Override
 	void doAction() {
-		sender.sendLetter(thanksLetter);
+		receiver.credit(amount);
+		receiver.sendLetter(thanksLetter);
+		
 	}
 	@Override
 	public void open() {
