@@ -4,12 +4,12 @@ import java.util.Set;
 
 public class Inhabitant {
 	
+	//ATTRIBUTS
 	protected String name;
 	protected City city;
 	protected Account account;
 	protected Set<Letter> received;
 
-	//ATTRIBUTS
 	
 	//CONSTRUCTORS
 	/**
@@ -58,10 +58,33 @@ public class Inhabitant {
 	 * @param received the letter received
 	 */
 	public void receiveLetter(Letter received) {
-		received.open();
+		received.doAction();
 		this.received.add(received);
 	}
 
-
-
+	/**
+	 * credit the account of this Inhabitant of the specified amount of money
+	 * @param amount the amount that will be credited 
+	 */
+	public void credit(int amount){
+		this.account.credit(amount);
+	}
+	
+	/**
+	 * debit the specified amount of money from this Inhabitant's account 
+	 * @param amount - the amount that will be debited
+	 */
+	public void debit(int amount){
+		this.account.debit(amount);
+	}
+	
+	/**
+	 * getter for the balance of this inhabitant's account 
+	 * @return the balance of this Inhabitant's Account 
+	 */
+	public int getBalance(){
+		return this.account.getBalance();
+	}
+	
+	
 }

@@ -1,6 +1,7 @@
 package content;
 
 
+
 public class Text implements Content{
 
 	protected String text;
@@ -10,6 +11,9 @@ public class Text implements Content{
 	}
 	public String toString(){
 		return text;
+	}
+	public void setText(String s){
+		 text = s;		
 	}
 	public void print(){
 		System.out.print( text );
