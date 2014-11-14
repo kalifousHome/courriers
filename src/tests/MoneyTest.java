@@ -14,7 +14,11 @@ public class MoneyTest {
 		int i = 10;
 		Money money = new Money( 10 );
 		assertEquals(i,money.getAmount());
-		
+		try{
+			Money m = new Money(-10);
+			assertEquals(-10,m.getAmount());
+		}
+		catch (IllegalArgumentException e){};
 	}
 
 }

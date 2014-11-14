@@ -13,5 +13,8 @@ public class Money implements Content{
 	public int getAmount() {
 		return amount;
 	}
+	public String toString(){
+		return amount+"$";	
+	}
 
 }

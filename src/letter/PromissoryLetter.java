@@ -21,7 +21,7 @@ public class PromissoryLetter extends Letter{
 	 * @param money the money sent
 	 **/
 	public PromissoryLetter(Inhabitant sender, Inhabitant receiver, Money money) {
-		
+	
 		super(sender, receiver,money);
 		amount = ((Money)content).getAmount();
 		sender.debit(amount);

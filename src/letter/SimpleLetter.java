@@ -5,8 +5,8 @@ import content.Text;
 public class SimpleLetter extends Letter {
 	protected static final int cost = 1;	
 	
-	public SimpleLetter(Inhabitant sender, Inhabitant receiver, Text content) {
-		super(sender, receiver, content);
+	public SimpleLetter(Inhabitant sender, Inhabitant receiver, Text text) {
+		super(sender, receiver, text);
 		
 	}
 

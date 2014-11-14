@@ -16,9 +16,9 @@ public class Inhabitant {
 	 * Constructs a new Inhabitant with the specified City
 	 * @param city - the city
 	 */
-	public Inhabitant(City city){
+	public Inhabitant(City city,int account){
 		this.city = city;
-		this.account = new Account();
+		this.account = new Account(account);
 	}
 	
 	/**
@@ -26,9 +26,10 @@ public class Inhabitant {
 	 * @param city - the city
 	 * @param name - the name 
 	 */
-	public Inhabitant(City city , String name){
+	public Inhabitant(City city , String name,int account){
 		this.city = city;
 		this.name = name;
+		this.account = new Account(account);
 	}
 	
 	//GETTERS
