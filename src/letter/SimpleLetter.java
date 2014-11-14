@@ -20,4 +20,10 @@ public class SimpleLetter extends Letter {
 				//affichage
 	}
 
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

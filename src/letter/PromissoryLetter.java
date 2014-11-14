@@ -41,7 +41,12 @@ public class PromissoryLetter extends Letter{
 	 **/
 	@Override
 	void doAction() {
-		sender.sendLetter(thanksLetter , receiver);
+		sender.sendLetter(thanksLetter);
+	}
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

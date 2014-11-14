@@ -17,7 +17,13 @@ public class Registered extends LetterDecorator{
 		decoratedLetter.doAction();
 		AcknowledgmentReceipt a = new AcknowledgmentReceipt(receiver, sender);
 		AcknowledgmentLetter letter = new AcknowledgmentLetter(receiver, sender,a);
-		receiver.sendLetter(letter, sender);
+		receiver.sendLetter(letter);
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

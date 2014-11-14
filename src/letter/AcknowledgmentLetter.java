@@ -21,5 +21,11 @@ public class AcknowledgmentLetter extends Letter{
 	void doAction() {
 		//affichage		
 	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
