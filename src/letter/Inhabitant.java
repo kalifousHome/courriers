@@ -1,6 +1,6 @@
 package letter;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Inhabitant {
 	
@@ -8,7 +8,7 @@ public class Inhabitant {
 	protected String name;
 	protected City city;
 	protected Account account;
-	protected Set<Letter> received;
+	protected ArrayList<Letter> received;
 
 	
 	//CONSTRUCTORS
@@ -19,6 +19,10 @@ public class Inhabitant {
 	public Inhabitant(City city,int account){
 		this.city = city;
 		this.account = new Account(account);
+=======
+		this.account = new Account();
+		this.received = new ArrayList<Letter>();
+>>>>>>> d282a20a16744cbb8e90f1e22da047bb2898cdf5
 	}
 	
 	/**
@@ -29,7 +33,11 @@ public class Inhabitant {
 	public Inhabitant(City city , String name,int account){
 		this.city = city;
 		this.name = name;
+<<<<<<< HEAD
 		this.account = new Account(account);
+=======
+		this.received = new ArrayList<Letter>();
+>>>>>>> d282a20a16744cbb8e90f1e22da047bb2898cdf5
 	}
 	
 	//GETTERS
