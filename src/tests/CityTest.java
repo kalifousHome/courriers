@@ -44,5 +44,9 @@ public class CityTest {
 		assertEquals(mypostbox,city.getPostbox());
 	}
 	
+	@Test
+	public void distributeLetterTest(){
+		
+	}
 	
 }
