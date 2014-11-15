@@ -11,10 +11,15 @@ public class Urgent extends LetterDecorator {
 			return decoratedLetter.getCost()*2;
 	}
 
-	@Override
-	public void open() {
-		// TODO Auto-generated method stub
-		
-	}
 	
+	@Override
+	public void doAction(){
+				decoratedLetter.doAction();
+	}
+
+	@Override
+	public String getType() {
+		
+		return "urgent ";
+	}
 }

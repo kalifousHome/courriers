@@ -2,13 +2,17 @@ package letter;
 
 import content.Content;
 
-public abstract class Letter { //implements Content{
+public abstract class Letter implements Content{ //implements Content{
 
 	protected Inhabitant sender;
 	protected Inhabitant receiver;
 	protected Content content;
 	
+	public abstract String toString();
 	abstract int getCost();
+	/**
+	 * credite le compte pour une promissory, affiche le texte d'une simple etc...
+	 */
 	abstract void doAction();
 	
 	public Letter(Inhabitant sender, Inhabitant receiver, Content content){
@@ -25,11 +29,6 @@ public abstract class Letter { //implements Content{
 	public Content getContent(){
 		return content;
 		}
-	
-	/**
-	 * credite le compte pour une promissory, affiche le texte d'une simple etc...
-	 */
-	public abstract void open();
-	
-	}
+	public abstract String getType();
+}
 

@@ -6,7 +6,12 @@ public class Thanks extends Text{
 
 	public Thanks(Inhabitant moneyReceiver , Inhabitant moneySender){
 		super("");
-		setText (" Thanks you very much "+moneySender.getName()+", I received the money.\n"+moneyReceiver.getName());
+		StringBuilder s = new StringBuilder("<< Thanks you very much ");
+		s.append(moneySender.getName());
+		s.append(", I received the money. ");
+		s.append(moneyReceiver.getName());
+		s.append(">>");
+		setText(s.toString());
 		
 	}
 

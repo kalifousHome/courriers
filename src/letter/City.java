@@ -10,6 +10,8 @@ public class City {
 	//ATTRIBUTS
 	protected final String name;
 	protected ArrayList<Letter> postbox;
+	protected StringBuilder currentState;
+	
 
 	//CONSTRUCTOR(S)
 	/**
@@ -19,6 +21,7 @@ public class City {
 	public City(String name) {
 		this.name = name;
 		this.postbox = new ArrayList<Letter>();
+		currentState = new StringBuilder();
 	}
 	
 	//GETTER(S)
@@ -35,7 +38,7 @@ public class City {
 	 * @return the actual date and time 
 	 */
 	public String getDateTime() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         return dateFormat.format(date);
     }
@@ -55,10 +58,16 @@ public class City {
 	 */
 	public void distributeLetters(){
 		while(!(this.postbox.isEmpty())){
+			
 			Letter toDistribute = this.postbox.get(0);
 			toDistribute.getReceiver().receiveLetter(toDistribute);
 			this.postbox.remove(0);
+			currentState.append(toDistribute.toString());
+			currentState.append("\n");
 		}
+		
 	}
-
+	public String toString(){
+		return currentState.toString();
+	}
 }

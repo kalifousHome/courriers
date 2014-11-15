@@ -11,43 +11,64 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
+		StringBuilder s = new StringBuilder();
+		
 		//Creating the city
-		City city = new City("Lille");
+		City city = new City("LILLE");
+		s.append("----------------------------------------\n");
+		s.append("\nCity name : ");
+		s.append(city.name);
+		s.append("\n");
 		
 		//Creating and initializing city inhabitants
+		
 		Inhabitant[] inhab = new Inhabitant[100]; 	
+		
 		for(int i=0;i<100;i++){
 			inhab[i]= new Inhabitant(city,"inhabitant_"+i,10000);			
 		}
-		 
 		
-				
 		//Creating Letters
+		Letter inside ;
 		Letter[] l = new Letter[20];
+		
+		//---------DAY 1 --------------
+		s.append("\n----------DAY 1---------\n\n");
 		
 		for(int j=0;j<20;j++)
 		{
 			//Initializing letters
 			Content content = new Money(j*100);
-			l[j]= new PromissoryLetter(inhab[j],inhab[j+1],(Money)content );	
-			//Sending letters
-			city.sendLetter(l[j]);
-		}
-		System.out.println("Day 1");
-		//Distributing the promissory letters
-		city.distributeLetters();
-		System.out.println("Day 1");
-		for(int j=0;j<20;j++)
-		{
-			//Initializing letters
-			Content content = new Text("Blabla");
-			l[j]= new SimpleLetter(inhab[j],inhab[j+1],(Text)content);	
+			inside = new PromissoryLetter(inhab[j],inhab[j+1],(Money)content );	
+			l[j] = new Urgent(inside);
 			//Sending letters
 			city.sendLetter(l[j]);
 		}
 		
-		System.out.println("Day 1");
+		
+		//Distributing the promissory letters
 		city.distributeLetters();
-	}
+		s.append(city.toString());		
+		//---------DAY 2----------
+		s.append("\n----------DAY 2---------\n\n");
+		for(int j=0;j<20;j++)
+		{
+			//Initial-izing letters
+			Content content = new Text("Blabla");
+			inside = new SimpleLetter(inhab[j],inhab[j+1],(Text)content);
+			l[j] = new Urgent(inside);
+			
+				
+			//Sending letters
+			city.sendLetter(l[j]);
+		}
+		
+		city.distributeLetters();
+		s.append(city.toString());
+		s.append("----------------------------------------\n");
+		System.out.print(s.toString());
+		
+	
 
+	}
 }

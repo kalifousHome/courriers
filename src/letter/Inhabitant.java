@@ -17,6 +17,7 @@ public class Inhabitant {
 	 * @param city - the city
 	 */
 	public Inhabitant(City city,int account){
+		
 		this.city = city;
 		this.account = new Account(account);
 		this.received = new ArrayList<Letter>();
@@ -54,6 +55,7 @@ public class Inhabitant {
 	 */
 	public void sendLetter(Letter letter) {
 		this.city.sendLetter(letter);
+		letter.receiver.receiveLetter(letter);
 	}
 
 	/**

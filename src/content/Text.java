@@ -15,7 +15,4 @@ public class Text implements Content{
 	public void setText(String s){
 		 text = s;		
 	}
-	public void print(){
-		System.out.print( text );
-	}
 }

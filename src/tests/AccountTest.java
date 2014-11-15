@@ -40,8 +40,10 @@ public class AccountTest {
 	
 	@Test (expected = IllegalArgumentException.class)
 	public void testCreditException(){
+		
 		Account acc = new Account();
 		acc.credit(-52);
+		
 	}
 
 }

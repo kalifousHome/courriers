@@ -23,9 +23,19 @@ public class AcknowledgmentLetter extends Letter{
 	}
 
 	@Override
-	public void open() {
-		// TODO Auto-generated method stub
+	public String toString() {
 		
+			StringBuilder s = new StringBuilder();
+			
+			s.append(getType());
+			s.append(content.toString());
+			return s.toString();
+		
+	}
+
+	@Override
+	public String getType() {
+		return "aknowledgment letter ";
 	}
 	
 }

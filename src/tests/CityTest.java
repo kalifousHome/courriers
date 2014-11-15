@@ -36,8 +36,8 @@ public class CityTest {
 	@Test
 	public void sendLetterTest() {
 		TestCity city = new TestCity("city");
-		Inhabitant inhabitant1 = new Inhabitant(city);
-		Inhabitant inhabitant2 = new Inhabitant(city);
+		Inhabitant inhabitant1 = new Inhabitant(city, null, 0);
+		Inhabitant inhabitant2 = new Inhabitant(city, null, 0);
 		Letter letter = new SimpleLetter(inhabitant1,inhabitant2,new Text("test"));
 		ArrayList<Letter> mypostbox = new ArrayList<Letter>();
 		mypostbox.add(letter);
@@ -49,8 +49,8 @@ public class CityTest {
 	@Test
 	public void distributeLetterTest() {
 		TestCity city = new TestCity("city");
-		Inhabitant inhabitant1 = new Inhabitant(city);
-		Inhabitant inhabitant2 = new Inhabitant(city);
+		Inhabitant inhabitant1 = new Inhabitant(city, null, 0);
+		Inhabitant inhabitant2 = new Inhabitant(city, null, 0);
 		Letter letter = new SimpleLetter(inhabitant1,inhabitant2,new Text("test"));
 		city.sendLetter(letter);
 		city.distributeLetters();

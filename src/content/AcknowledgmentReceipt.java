@@ -6,7 +6,19 @@ public class AcknowledgmentReceipt extends Text{
 
 	public AcknowledgmentReceipt(Inhabitant letterReceiver , Inhabitant letterSender) {
 		super("");
-		setText(letterReceiver.getName()+" located at "+letterReceiver.getCity().getName()+" received the letter from "+letterSender.getName()+" located at "+letterSender.getCity().getName()+ "at "+letterSender.getCity().getDateTime());
+		StringBuilder s = new StringBuilder("<< ");
+		s.append (letterReceiver.getName());
+		s.append(" located at ");
+		s.append(letterReceiver.getCity().getName());
+		s.append(" received the letter from ");
+		s.append(letterSender.getName());
+		s.append(" located at ");
+		s.append(letterSender.getCity().getName());
+		s.append("at ");
+		s.append(letterSender.getCity().getDateTime());
+		s.append(">>");
+		setText(s.toString());
+		
 	}
 	
 }

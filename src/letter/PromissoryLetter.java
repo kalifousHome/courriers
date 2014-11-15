@@ -23,33 +23,45 @@ public class PromissoryLetter extends Letter{
 	public PromissoryLetter(Inhabitant sender, Inhabitant receiver, Money money) {
 	
 		super(sender, receiver,money);
+		
 		amount = ((Money)content).getAmount();
 		sender.debit(amount);
 		
 		// Initializing the thank letter with a thank text		
-		Thanks thanksText = new Thanks(receiver , sender); 
+		Thanks thanksText = new Thanks(receiver , sender); 		
 		thanksLetter = new SimpleLetter(receiver, sender, thanksText) ;
 	}
 	/**
 	 * @return cost of the letter :1+1% of the amount sent
 	 **/
 	@Override
-	int getCost() {
+	public int getCost() {
+		
 		return 1+(int)(0.01*amount);
+	
 	}
 	/**
 	 * When the letter is received, the receiver sends a thanks letter to the sender
 	 **/
 	@Override
 	void doAction() {
+		
 		receiver.credit(amount);
 		receiver.sendLetter(thanksLetter);
 		
 	}
 	@Override
-	public void open() {
-		// TODO Auto-generated method stub
-		
+	public String toString() {
+		{
+			StringBuilder s = new StringBuilder();
+			s.append(getType());
+			s.append(content.toString());
+			return s.toString();
+		}
 	}
-
+	@Override
+	public String getType() {
+		return "promissory letter ";
+	}
+	
 }
