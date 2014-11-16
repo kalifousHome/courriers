@@ -9,27 +9,18 @@ public class SimpleLetter extends Letter {
 		super(sender, receiver, text);
 		
 	}
-
+	/*
+	 *@return returns the cost of the letter 
+	 */
 	@Override
 	public int getCost() {
 		return cost;
 	}
-
+	/**
+	 * No action expected.
+	 */
 	@Override
-	public void doAction() {
-				//affichage
-	}
-
-	@Override
-	public String toString() {
-		
-
-		StringBuilder s = new StringBuilder();
-		s.append(getType());
-		s.append(content.toString());
-		return s.toString();
-		
-	}
+	public void doAction() {}
 
 	@Override
 	public String getType() {

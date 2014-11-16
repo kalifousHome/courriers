@@ -51,15 +51,9 @@ public class PromissoryLetter extends Letter{
 		receiver.sendLetter(thanksLetter);
 		
 	}
-	@Override
-	public String toString() {
-		{
-			StringBuilder s = new StringBuilder();
-			s.append(getType());
-			s.append(content.toString());
-			return s.toString();
-		}
-	}
+	/* 
+	 *@return returns the type of the letter as a readable text: "simple letter" , "promissory letter " etc
+	 */
 	@Override
 	public String getType() {
 		return "promissory letter ";

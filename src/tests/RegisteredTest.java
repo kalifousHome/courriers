@@ -13,7 +13,7 @@ import org.junit.Test;
 import content.Money;
 
 /**
- * @author kalifou
+ * 
  *
  */
 public class RegisteredTest {
@@ -27,6 +27,9 @@ public class RegisteredTest {
 		PromissoryLetter p = new PromissoryLetter(a,b,m);
 		Registered l = new Registered( p );
 		assertEquals( l.getCost() , p.getCost()+15);
+	
 	}
+	
+	
 
 }

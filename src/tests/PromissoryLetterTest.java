@@ -12,7 +12,7 @@ import org.junit.Test;
 import content.Money;
 
 /**
- * @author kalifou
+ *
  *
  */
 public class PromissoryLetterTest {

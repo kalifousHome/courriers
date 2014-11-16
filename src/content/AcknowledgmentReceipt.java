@@ -1,11 +1,16 @@
 package content;
-
 import letter.Inhabitant;
 
+/*
+ * Class representing the content of Aknowledgment Letter as a Text .
+ * It's a text aknowledging the receipt of a registered letter.
+ */
 public class AcknowledgmentReceipt extends Text{
 
 	public AcknowledgmentReceipt(Inhabitant letterReceiver , Inhabitant letterSender) {
 		super("");
+		
+		/*Building the aknowledgment text. */
 		StringBuilder s = new StringBuilder("<< ");
 		s.append (letterReceiver.getName());
 		s.append(" located at ");
@@ -16,7 +21,8 @@ public class AcknowledgmentReceipt extends Text{
 		s.append(letterSender.getCity().getName());
 		s.append("at ");
 		s.append(letterSender.getCity().getDateTime());
-		s.append(">>");
+		s.append(">>"); 
+		/*Setting the text as a content */
 		setText(s.toString());
 		
 	}
