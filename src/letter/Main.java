@@ -15,11 +15,12 @@ public class Main {
 		
 		//Creating the city
 		City city = new City("LILLE");
+		
 		s.append("----------------------------------------\n");
 		s.append("\nCity name : ");
 		s.append(city.name);
-		s.append("\n");
-		
+		s.append("\n\n");
+		s.append(city.toString());
 		//Creating and initializing city inhabitants
 		
 		Inhabitant[] inhab = new Inhabitant[100]; 	
@@ -33,8 +34,8 @@ public class Main {
 		Letter[] l = new Letter[20];
 		
 		//---------DAY 1 --------------
-		s.append("\n----------DAY 1---------\n\n");
-		
+		//s.append("\n----------DAY 1---------\n\n");
+		//s.append(city.toString());
 		for(int j=0;j<20;j++)
 		{
 			//Initializing letters
@@ -50,7 +51,7 @@ public class Main {
 		city.distributeLetters();
 		s.append(city.toString());		
 		//---------DAY 2----------
-		s.append("\n----------DAY 2---------\n\n");
+		//s.append("\n----------DAY 2---------\n\n");
 		for(int j=0;j<20;j++)
 		{
 			//Initial-izing letters

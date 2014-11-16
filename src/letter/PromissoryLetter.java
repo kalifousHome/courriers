@@ -28,8 +28,9 @@ public class PromissoryLetter extends Letter{
 		sender.debit(amount);
 		
 		// Initializing the thank letter with a thank text		
-		Thanks thanksText = new Thanks(receiver , sender); 		
-		thanksLetter = new SimpleLetter(receiver, sender, thanksText) ;
+		Thanks thanksText = new Thanks(receiver , sender); 	
+		SimpleLetter s = new SimpleLetter(receiver, sender, thanksText) ;
+		thanksLetter = new Usual(s);
 	}
 	/**
 	 * @return cost of the letter :1+1% of the amount sent

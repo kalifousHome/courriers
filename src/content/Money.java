@@ -13,7 +13,9 @@ public class Money implements Content{
 		return amount;
 	}
 	public String toString(){
+		
 		StringBuilder s = new StringBuilder();
+		s.append("with amount ");
 		s.append(amount);
 		s.append('$');
 		return s.toString();	

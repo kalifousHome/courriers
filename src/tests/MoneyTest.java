@@ -29,7 +29,7 @@ public class MoneyTest {
 		
 		int i = 10000;
 		Money money = new Money( i );
-		assertEquals(i+"$",money.toString());
+		assertEquals("with amount "+i+"$",money.toString());
 		
 	}
 

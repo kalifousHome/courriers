@@ -23,7 +23,7 @@ public class Usual extends LetterDecorator {
 	@Override
 	public String getType() {
 		
-		return null;
+		return "";
 	}
 
 }

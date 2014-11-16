@@ -11,6 +11,7 @@ public class City {
 	protected final String name;
 	protected ArrayList<Letter> postbox;
 	protected StringBuilder currentState;
+	protected int date;
 	
 
 	//CONSTRUCTOR(S)
@@ -19,9 +20,12 @@ public class City {
 	 * @param name - the name 
 	 */
 	public City(String name) {
+		
 		this.name = name;
 		this.postbox = new ArrayList<Letter>();
 		currentState = new StringBuilder();
+		date =1;
+		
 	}
 	
 	//GETTER(S)
@@ -57,17 +61,23 @@ public class City {
 	 * Distribute the letters in the postbox of this City to the Inhabitants and empty the postbox
 	 */
 	public void distributeLetters(){
+		
 		while(!(this.postbox.isEmpty())){
 			
 			Letter toDistribute = this.postbox.get(0);
 			toDistribute.getReceiver().receiveLetter(toDistribute);
-			this.postbox.remove(0);
+			postbox.remove(0);
 			currentState.append(toDistribute.toString());
 			currentState.append("\n");
+			
 		}
-		
+		date++;
 	}
 	public String toString(){
+		
+		currentState.append("\n----------DAY ");
+		currentState.append(date);
+		currentState.append("---------\n\n");
 		return currentState.toString();
 	}
 }
