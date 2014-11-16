@@ -1,6 +1,7 @@
 package letter;
 
 import content.Content;
+import javax.swing.*;
 import content.Money;
 import content.Text;
 
@@ -68,6 +69,15 @@ public class Main {
 		s.append(city.toString());
 		s.append("----------------------------------------\n");
 		System.out.print(s.toString());
+		/* A simple graphic interface */
+		//JFrame fenetre = new JFrame();
+		//fenetre.setTitle("Application Swing");
+		//fenetre.setSize(700,700);
+		//JLabel label = new JLabel(s.toString()+"\n\n\n\n\n\n\n"+"ICI");
+		//fenetre.getContentPane().add(label);
+	//	fenetre.setVisible(true);
+		
+		
 		
 	
 
