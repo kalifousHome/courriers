@@ -55,7 +55,6 @@ public class Inhabitant {
 	 */
 	public void sendLetter(Letter letter) {
 		this.city.sendLetter(letter);
-		letter.receiver.receiveLetter(letter);
 	}
 
 	/**

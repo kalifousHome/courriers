@@ -1,6 +1,8 @@
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,16 @@ public class CityTest {
 		city.sendLetter(letter);
 		assertFalse(city.getPostbox().isEmpty());
 		assertEquals(mypostbox,city.getPostbox());
+	}
+	
+	@Test
+	public void inhabitantSendLetterTest(){
+		TestCity city = new TestCity("city");
+		Inhabitant inhabitant1 = new Inhabitant(city, null, 0);
+		Inhabitant inhabitant2 = new Inhabitant(city, null, 0);
+		Letter letter = new SimpleLetter(inhabitant1,inhabitant2,new Text("test"));
+		inhabitant1.sendLetter(letter);
+		assertTrue(city.getPostbox().contains(letter));
 	}
 
 	@Test
