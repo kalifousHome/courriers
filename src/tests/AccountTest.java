@@ -1,10 +1,11 @@
 package tests;
 
 import static org.junit.Assert.*;
+import letter.Account;
+
 
 import org.junit.Test;
 
-import letter.Account;
 
 public class AccountTest {
 

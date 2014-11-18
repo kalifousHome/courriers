@@ -14,7 +14,7 @@ public class Thanks extends Text{
 		/*Building the thanks text. */
 		StringBuilder s = new StringBuilder("<< Thanks you very much ");
 		s.append(moneySender.getName());
-		s.append(", I received the money. ");
+		s.append(", I received the money yesterday. ");
 		s.append(moneyReceiver.getName());
 		s.append(">>");
 		/*Setting the text as a content */

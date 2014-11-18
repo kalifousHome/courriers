@@ -29,10 +29,6 @@ public abstract class LetterDecorator extends Letter {
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder();
-		s.append(sender.getName());
-		s.append(" sends to ");
-		s.append(receiver.getName());
-		s.append(" the following ");
 		s.append(getType());
 		s.append(content.toString());
 		return s.toString();

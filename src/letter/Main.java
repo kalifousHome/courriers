@@ -44,6 +44,8 @@ public class Main {
 			l[j] = new Urgent(inside);
 			//Sending letters
 			city.sendLetter(l[j]);
+			s.append(city.toString());
+			
 		}
 		
 		
@@ -62,7 +64,8 @@ public class Main {
 				
 			//Sending letters
 			city.sendLetter(l[j]);
-		}
+			s.append(city.toString());
+			}
 		
 		city.distributeLetters();
 		s.append(city.toString());

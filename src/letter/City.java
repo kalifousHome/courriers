@@ -49,30 +49,38 @@ public class City {
 	 * @param letter the letter
 	 */
 	public void sendLetter(Letter letter){
+		
 		this.postbox.add(letter);
+		currentState= new StringBuilder("=> "+ letter.getSender().getName()+" sends to "+letter.getReceiver().getName()+" the "+letter.toString());
+		currentState.append("\n");
+		
 	}
 	
 	/**
 	 * Distribute the letters in the postbox of this City to the Inhabitants and empty the postbox
 	 */
 	public void distributeLetters(){
+		date++;
+		currentState = new StringBuilder();
+		currentState.append("\n----------DAY ");
+		currentState.append(date);
+		currentState.append("---------\n\n");
 		
 		while(!(this.postbox.isEmpty())){
 			
 			Letter toDistribute = this.postbox.get(0);
 			toDistribute.getReceiver().receiveLetter(toDistribute);
 			postbox.remove(0);
-			currentState.append(toDistribute.toString());
+			currentState.append("<= "+ toDistribute.getReceiver().getName()+ " receives from "+toDistribute.getSender().getName()+" the "+toDistribute.toString());
 			currentState.append("\n");
 			
 		}
-		date++;
+		
 	}
 	public String toString(){
 		
-		currentState.append("\n----------DAY ");
-		currentState.append(date);
-		currentState.append("---------\n\n");
+		
 		return currentState.toString();
 	}
+	
 }
