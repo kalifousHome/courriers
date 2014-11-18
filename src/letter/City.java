@@ -1,9 +1,6 @@
 package letter;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class City {
 	
@@ -38,14 +35,12 @@ public class City {
 	}
 
 	/**
-	 * A method to get current date and time 
-	 * @return the actual date and time 
+	 * Getter
+	 * @return the current date of this city
 	 */
-	public String getDateTime() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
+	public int getDate(){
+		return this.date;
+	}
 	
 	//METHODS
 	

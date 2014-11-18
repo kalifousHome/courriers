@@ -1,7 +1,6 @@
 package letter;
 
 import content.Content;
-import javax.swing.*;
 import content.Money;
 import content.Text;
 
