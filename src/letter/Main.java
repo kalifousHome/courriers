@@ -11,16 +11,17 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		StringBuilder s = new StringBuilder();
 		
 		//Creating the city
 		City city = new City("LILLE");
 		
-		s.append("----------------------------------------\n");
-		s.append("\nCity name : ");
-		s.append(city.name);
-		s.append("\n\n");
-		s.append(city.toString());
+		System.out.print("----------------------------------------\n");
+		System.out.print("\nCity name : ");
+		System.out.print(city.name);
+		System.out.print("\n\n");
+		System.out.print(city.toString());
+		city.distributeLetters();
+
 		//Creating and initializing city inhabitants
 		
 		Inhabitant[] inhab = new Inhabitant[100]; 	
@@ -34,8 +35,6 @@ public class Main {
 		Letter[] l = new Letter[20];
 		
 		//---------DAY 1 --------------
-		//s.append("\n----------DAY 1---------\n\n");
-		//s.append(city.toString());
 		for(int j=0;j<20;j++)
 		{
 			//Initializing letters
@@ -44,16 +43,15 @@ public class Main {
 			l[j] = new Urgent(inside);
 			//Sending letters
 			city.sendLetter(l[j]);
-			s.append(city.toString());
+	
 			
 		}
 		
-		
 		//Distributing the promissory letters
 		city.distributeLetters();
-		s.append(city.toString());		
+
+
 		//---------DAY 2----------
-		//s.append("\n----------DAY 2---------\n\n");
 		for(int j=0;j<20;j++)
 		{
 			//Initial-izing letters
@@ -64,24 +62,14 @@ public class Main {
 				
 			//Sending letters
 			city.sendLetter(l[j]);
-			s.append(city.toString());
+		
 			}
 		
-		city.distributeLetters();
-		s.append(city.toString());
-		s.append("----------------------------------------\n");
-		System.out.print(s.toString());
-		/* A simple graphic interface */
-		//JFrame fenetre = new JFrame();
-		//fenetre.setTitle("Application Swing");
-		//fenetre.setSize(700,700);
-		//JLabel label = new JLabel(s.toString()+"\n\n\n\n\n\n\n"+"ICI");
-		//fenetre.getContentPane().add(label);
-	//	fenetre.setVisible(true);
 		
-		
-		
+		/* Print the trace and flush the StringBuilder */
 	
+		city.distributeLetters();
+		System.out.print("----------------------------------------\n");
 
 	}
 }

@@ -21,7 +21,7 @@ public class City {
 		this.name = name;
 		this.postbox = new ArrayList<Letter>();
 		currentState = new StringBuilder();
-		date =1;
+		date =0;
 		
 	}
 	
@@ -50,9 +50,11 @@ public class City {
 	 */
 	public void sendLetter(Letter letter){
 		
+		/* Flush the StringBuilder and print the trace*/
 		this.postbox.add(letter);
 		currentState= new StringBuilder("=> "+ letter.getSender().getName()+" sends to "+letter.getReceiver().getName()+" the "+letter.toString());
 		currentState.append("\n");
+		System.out.print(currentState.toString());
 		
 	}
 	
@@ -60,19 +62,24 @@ public class City {
 	 * Distribute the letters in the postbox of this City to the Inhabitants and empty the postbox
 	 */
 	public void distributeLetters(){
+		
 		date++;
+		/* Flush the StringBuilder and print the trace*/
 		currentState = new StringBuilder();
 		currentState.append("\n----------DAY ");
 		currentState.append(date);
 		currentState.append("---------\n\n");
+		System.out.print(currentState.toString());
 		
-		while(!(this.postbox.isEmpty())){
+	while(!(this.postbox.isEmpty())){
 			
-			Letter toDistribute = this.postbox.get(0);
-			toDistribute.getReceiver().receiveLetter(toDistribute);
-			postbox.remove(0);
-			currentState.append("<= "+ toDistribute.getReceiver().getName()+ " receives from "+toDistribute.getSender().getName()+" the "+toDistribute.toString());
-			currentState.append("\n");
+		currentState = new StringBuilder();
+		Letter toDistribute = this.postbox.get(0);
+		toDistribute.getReceiver().receiveLetter(toDistribute);
+		postbox.remove(0);
+		currentState.append("<= "+ toDistribute.getReceiver().getName()+ " receives from "+toDistribute.getSender().getName()+" the "+toDistribute.toString());
+		currentState.append("\n");
+		System.out.print(currentState.toString());
 			
 		}
 		
