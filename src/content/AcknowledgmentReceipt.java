@@ -20,7 +20,7 @@ public class AcknowledgmentReceipt extends Text{
 		s.append(" located at ");
 		s.append(letterSender.getCity().getName());
 		s.append("at ");
-		s.append(letterSender.getCity().getDateTime());
+		s.append(letterSender.getCity().getDate());
 		s.append(">>"); 
 		/*Setting the text as a content */
 		setText(s.toString());
